@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class Authentification extends javax.swing.JFrame {
 
     Connection con =null;
+    int x;
     
 
     private int nn;
