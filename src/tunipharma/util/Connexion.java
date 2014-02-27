@@ -1,3 +1,5 @@
+package tunipharma.util;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -13,7 +15,7 @@ import java.sql.SQLException;
  *
  * @author Karray
  */
-public class connexion {
+public class Connexion {
 
      private static final  String driver = "com.mysql.jdbc.Driver";
    private static final  String url = "jdbc:mysql://localhost:3306/tunipharma";
@@ -22,7 +24,7 @@ public class connexion {
    private static Connection con;
 
 
-   private connexion(){
+   private Connexion(){
 
    }
 
@@ -42,7 +44,7 @@ public class connexion {
     }
    public static Connection getInstance(){
        if (con==null){
-           new connexion().etablirConnection();
+           new Connexion().etablirConnection();
        }
    return con;
    }

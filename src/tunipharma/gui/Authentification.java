@@ -1,3 +1,5 @@
+package tunipharma.gui;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor
@@ -10,13 +12,13 @@
 import java.awt.*;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import tunipharma.Facebook.ConnexionFacebook;
 
 
 public class Authentification extends javax.swing.JFrame {
 
     Connection con =null;
-    int x;
-    
+  
 
     private int nn;
     /**
@@ -38,16 +40,22 @@ public class Authentification extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txt_login = new javax.swing.JTextField();
         txt_password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tunipharma/gui/Capture-d’écran-2012-03-27-à-21.37.42.png"))); // NOI18N
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Authentification", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(0, 102, 51))); // NOI18N
 
@@ -65,6 +73,14 @@ public class Authentification extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton2.setText("Connecter via Facebook");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -79,11 +95,14 @@ public class Authentification extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_password)
-                            .addComponent(txt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(195, Short.MAX_VALUE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,108 +115,130 @@ public class Authentification extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel5.setText("TUNI");
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel6.setText("PHARMA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(260, 260, 260))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5))
+                .addGap(75, 75, 75)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ConnexionFacebook connexionFacebook = new ConnexionFacebook();
+        connexionFacebook.loginFb();
+         
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
-       
-      // String login ="";
-       String password = "";
-       //login =txt_login.getText();
-       
-      if(txt_login.getText().isEmpty()== true || txt_password.getText().isEmpty()== true)
-			{
-				JOptionPane.showMessageDialog(null, "Veuillez saisir votre Login et Pw");
-				
-			}
-			else  {
-				try{
-					 Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-				}
-					catch(ClassNotFoundException ex) 
-                                            
-					{
-					JOptionPane.showMessageDialog(null,"Driver introuvable"+ex.getMessage());
-					}
-				  try{   
-				
-				String url = "jdbc:mysql://localhost:3306/tunipharma";
-					con=DriverManager.getConnection(url,"root","");
-					String login=txt_login.getText();
-					String pw=txt_password.getText();
-					
-					String sql = "select count(*) from admin where Login = '"+login+"' and Password = '"+pw+"'";
-					try { 
-						Statement stmt = con.createStatement();
-						ResultSet result = stmt.executeQuery(sql);
-						while(result.next()) 
-						{
-							  nn = result.getInt(1);
-							
-						}
-						} catch (SQLException ex) { 
-						JOptionPane.showMessageDialog(null,"Erreur de requete"+ex.getMessage());
-						 }
-				}
-					catch (SQLException ex) { 
-					JOptionPane.showMessageDialog(null,"Erreur de connexion gggg"+ex.getMessage());
-					}
-				 
-				if(nn==1)
-					{
-					menu m = new menu();
-                                        m.setVisible(true);
-					this.dispose();
-					}
-				 if (nn==0)
-				 {
-					JOptionPane.showMessageDialog(null, " Login et Pw erroner");
-				 }
-			
-			
-				
-	}
-    
-        
-        
+        // String login ="";
+        String password = "";
+        //login =txt_login.getText();
+
+        if(txt_login.getText().isEmpty()== true || txt_password.getText().isEmpty()== true)
+        {
+            JOptionPane.showMessageDialog(null, "Veuillez saisir votre Login et Pw");
+
+        }
+        else  {
+            try{
+                Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            }
+            catch(ClassNotFoundException ex)
+
+            {
+                JOptionPane.showMessageDialog(null,"Driver introuvable"+ex.getMessage());
+            }
+            try{
+
+                String url = "jdbc:mysql://localhost:3306/tunipharma";
+                con=DriverManager.getConnection(url,"root","");
+                String login=txt_login.getText();
+                String pw=txt_password.getText();
+
+                String sql = "select count(*) from admin where Login = '"+login+"' and Password = '"+pw+"'";
+                try {
+                    Statement stmt = con.createStatement();
+                    ResultSet result = stmt.executeQuery(sql);
+                    while(result.next())
+                    {
+                        nn = result.getInt(1);
+
+                    }
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null,"Erreur de requete"+ex.getMessage());
+                }
+            }
+            catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"Erreur de connexion gggg"+ex.getMessage());
+            }
+
+            if(nn==1)
+            {
+                Menu m = new Menu();
+                m.setVisible(true);
+                this.dispose();
+            }
+            if (nn==0)
+            {
+                JOptionPane.showMessageDialog(null, " Login et et mot de passe erroner");
+            }
+
+        }
+
         // TODO add your handling code here:
-        
-       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -236,8 +277,12 @@ public class Authentification extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txt_login;
