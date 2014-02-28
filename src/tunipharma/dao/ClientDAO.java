@@ -80,11 +80,14 @@ public class ClientDAO {
             return null;
         }
     }
-     public void insertClient1(Client c ){
+     public void insertClient(Client c){
         
-        String requete = "insert into client (Nom, Prenom, Cin,Adresse,Mail,Telephonne,Pseudo,Mot_de_passe) values (?,?,?,?,?,?,?,?)";
+        String requete = "insert into client ( Nom,Prenom, Cin,Adresse,Mail,Telephonne,Pseudo,Mot_de_passe) values (?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Connexion.getInstance().prepareStatement(requete);
+           
+                    
+
             ps.setString(1, c.getNom_client());
             ps.setString(2, c.getPrenom_client());
             ps.setInt(3, c.getCin_client());
@@ -93,6 +96,7 @@ public class ClientDAO {
             ps.setInt(6, c.getTelephonne_client());
             ps.setString(7, c.getPseudo_client());
             ps.setString(8, c.getPwd_client());
+            
             ps.executeUpdate();
             System.out.println("Ajout effectuée avec succès");
         } catch (SQLException ex) {
@@ -102,7 +106,7 @@ public class ClientDAO {
         }
      } 
         
-       public void insertClient(Client cl){
+       public void insertClientfb(Client cl){
            // ClientDAO clientdao=new ClientDAO();
 
          String requete = "insert into client ( Mail,Pseudo) values (?,?)";

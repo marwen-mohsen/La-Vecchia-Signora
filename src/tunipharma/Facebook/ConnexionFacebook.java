@@ -141,7 +141,7 @@ public class ConnexionFacebook {
                                       
                                            InterfaceClient interfaceClient = new InterfaceClient();
                                            interfaceClient.setVisible(true);
-                                           JOptionPane.showMessageDialog(interfaceClient, "Bievenue" + registredUserName);
+                                           JOptionPane.showMessageDialog(interfaceClient, "Bienvenue " + registredUserName);
 
                                        } else {
                                          

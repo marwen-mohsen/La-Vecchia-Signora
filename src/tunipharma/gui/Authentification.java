@@ -66,7 +66,7 @@ public class Authentification extends javax.swing.JFrame {
         jLabel1.setText("Login :");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Connecxion");
+        jButton1.setText("Connexion");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -74,6 +74,7 @@ public class Authentification extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\VAIO\\Documents\\NetBeansProjects\\Tunipharma\\facebook.png")); // NOI18N
         jButton2.setText("Connecter via Facebook");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +179,7 @@ public class Authentification extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         ConnexionFacebook connexionFacebook = new ConnexionFacebook();
         connexionFacebook.loginFb();
-         
+          this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -189,7 +190,7 @@ public class Authentification extends javax.swing.JFrame {
 
         if(txt_login.getText().isEmpty()== true || txt_password.getText().isEmpty()== true)
         {
-            JOptionPane.showMessageDialog(null, "Veuillez saisir votre Login et Pw");
+            JOptionPane.showMessageDialog(null, "Veuillez saisir votre Login et Mot de passe");
 
         }
         else  {
