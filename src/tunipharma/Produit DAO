@@ -1,0 +1,111 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package esprit.DAO;
+
+import esprit.entite.Produit;
+import esprit.util.MyConnection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author p
+ */
+public class ProduitDAO implements DAO<Produit>{
+
+    @Override
+    public void Create(Produit pd) {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        
+         String requete = "insert into produit (Nom,Type,Pharmacie,CodeProduit,Periode_de_validite,Prix,Remise,Prix_actuelle) values (?,?,?,?,?,?,?,?)";
+        try { //dep=depdao.findDepotById(st.getDepot().getId_dep());
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+           // ps.setInt(1, pd.getid());
+            ps.setString(1, pd.getNom());
+            ps.setString(2, pd.getType());
+            ps.setString(3,pd.getPharmacie());
+            ps.setString(4, pd.getCodeproduit());
+            ps.setString(5, pd.getPeriode_de_validite());
+            ps.setInt(6, pd.getPrix());
+            ps.setInt(7, pd.getRemise());
+            ps.setInt(8, pd.getPrix_actuelle());
+            ps.executeUpdate();
+            System.out.println("Ajout effectuée avec succès");
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de l'insertion "+ex.getMessage());
+        }
+    }
+
+    @Override
+    public void Update(Produit pd) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    
+    public Produit FindByCode(int Codeproduit) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Produit> findAll() {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        List<Produit> listepharmacie = new ArrayList<>();
+
+        String requete = "select * from Produit";
+        try {
+           Statement statement = MyConnection.getInstance().createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+           // PharmacieDAO pharmacieDAO = new PharmacieDAO();
+            while(resultat.next()){
+                Produit produit =new Produit();
+                produit.setId(resultat.getInt(1));
+                produit.setNom(resultat.getString(2));
+                produit.setType(resultat.getString(3));
+                produit.setPharmacie(resultat.getString(4));
+                produit.setCodeproduit(resultat.getString(5));
+                 produit.setPeriode_de_validite(resultat.getString(6));
+                  produit.setPrix(resultat.getInt(7));
+                   produit.setRemise(resultat.getInt(8));
+                   produit.setPrix_actuelle(resultat.getInt(9));
+
+                listepharmacie.add(produit);
+            }
+            return listepharmacie;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des stocks "+ex.getMessage());
+            return null;
+        
+    }
+    }
+    @Override
+    public boolean Delete (int id) {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        String requete = "delete from produit where id=?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            System.out.println("Suppression effectuée avec succès");
+            return true;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la suppression "+ex.getMessage());
+        return false;
+    }
+    }
+
+    @Override
+    public Produit FindById(int id) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    
+}
