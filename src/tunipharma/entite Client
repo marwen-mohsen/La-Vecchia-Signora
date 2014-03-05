@@ -1,0 +1,138 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package esprit.entite;
+
+/**
+ *
+ * @author p
+ */
+public class Client {
+    
+    private int ID;
+   private String Nom;
+   private String Prenom;
+   private int Cin; 
+   private String Mail;
+   private int Telephonne;
+   private String Adresse;
+   private String Pseudo;
+   private String Password ;
+
+    public Client(int ID, String Nom, String Prenom, int Cin, String Mail, int Telephonne, String Adresse, String Pseudo, String Password) {
+        this.ID = ID;
+        this.Nom = Nom;
+        this.Prenom = Prenom;
+        this.Cin = Cin;
+        this.Mail = Mail;
+        this.Telephonne = Telephonne;
+        this.Adresse = Adresse;
+        this.Pseudo = Pseudo;
+        this.Password = Password;
+    }
+
+    public Client() {
+        
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getNom() {
+        return Nom;
+    }
+
+    public void setNom(String Nom) {
+        this.Nom = Nom;
+    }
+
+    public String getPrenom() {
+        return Prenom;
+    }
+
+    public void setPrenom(String Prenom) {
+        this.Prenom = Prenom;
+    }
+
+    public int getCin() {
+        return Cin;
+    }
+
+    public void setCin(int Cin) {
+        this.Cin = Cin;
+    }
+
+    public String getMail() {
+        return Mail;
+    }
+
+    public void setMail(String Mail) {
+        this.Mail = Mail;
+    }
+
+    public int getTelephonne() {
+        return Telephonne;
+    }
+
+    public void setTelephonne(int Telephonne) {
+        this.Telephonne = Telephonne;
+    }
+
+    public String getAdresse() {
+        return Adresse;
+    }
+
+    public void setAdresse(String Adresse) {
+        this.Adresse = Adresse;
+    }
+
+    public String getPseudo() {
+        return Pseudo;
+    }
+
+    public void setPseudo(String Pseudo) {
+        this.Pseudo = Pseudo;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Client other = (Client) obj;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" + "ID=" + ID + ", Nom=" + Nom + ", Prenom=" + Prenom + ", Cin=" + Cin + ", Mail=" + Mail + ", Telephonne=" + Telephonne + ", Adresse=" + Adresse + ", Pseudo=" + Pseudo + ", Password=" + Password + '}';
+    }
+   
+   
+    
+    
+    
+}
