@@ -25,6 +25,7 @@ import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.parser.ParserDelegator;
 import tunipharma.dao.ClientDAO;
 import tunipharma.entites.Client;
+import tunipharma.gui.InscriptionClient;
 import tunipharma.gui.InterfaceClient;
 
 /**
@@ -145,9 +146,9 @@ public class ConnexionFacebook {
 
                                        } else {
                                          
-                                           clientDAO.insertClient(client);
-                                           InterfaceClient interfaceClient = new InterfaceClient();
-                                           interfaceClient.setVisible(true);
+                                           
+                                           InscriptionClient inscriptionClient = new InscriptionClient(userMail,userName);
+                                           inscriptionClient.setVisible(true);
                                        }
                                    } catch (Exception ex) {
                                        Logger.getLogger(ConnexionFacebook.class.getName()).log(Level.SEVERE, null, ex);

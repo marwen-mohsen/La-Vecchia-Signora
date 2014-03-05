@@ -209,6 +209,12 @@ public class MailJframe extends javax.swing.JFrame {
             }
         });
 
+        jPassworSender1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPassworSender1ActionPerformed(evt);
+            }
+        });
+
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
@@ -412,6 +418,10 @@ public class MailJframe extends javax.swing.JFrame {
         cl.setVisible(true);
                 this.dispose();
     }//GEN-LAST:event_jButtonPrecedentActionPerformed
+
+    private void jPassworSender1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPassworSender1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPassworSender1ActionPerformed
 
     public String cleanUrl(URL url){
         

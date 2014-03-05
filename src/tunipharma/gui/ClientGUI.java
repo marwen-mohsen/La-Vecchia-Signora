@@ -51,12 +51,12 @@ public class ClientGUI extends javax.swing.JFrame {
         jTxtPseudo = new javax.swing.JTextField();
         jTxtTelephonne = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTxtPwd = new javax.swing.JTextField();
+        jTxtPwd = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jButtonAjouter = new javax.swing.JButton();
         jButtonSupprimer = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButtonSupprimer2 = new javax.swing.JButton();
+        jButtonEnvoyer = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,9 +107,9 @@ public class ClientGUI extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTxtPseudo, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTxtPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTxtPseudo, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                            .addComponent(jTxtPwd))
                         .addGap(45, 45, 45))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -125,12 +125,9 @@ public class ClientGUI extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,17 +154,18 @@ public class ClientGUI extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addComponent(jTxtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jTxtPseudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTxtPseudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTxtTelephonne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtPwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(jTxtPwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -198,12 +196,12 @@ public class ClientGUI extends javax.swing.JFrame {
             }
         });
 
-        jButtonSupprimer2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jButtonSupprimer2.setIcon(new javax.swing.ImageIcon("C:\\Users\\VAIO\\Documents\\NetBeansProjects\\Tunipharma\\email_send.png")); // NOI18N
-        jButtonSupprimer2.setText("Envoyer Mail");
-        jButtonSupprimer2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEnvoyer.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButtonEnvoyer.setIcon(new javax.swing.ImageIcon("C:\\Users\\VAIO\\Documents\\NetBeansProjects\\Tunipharma\\email_send.png")); // NOI18N
+        jButtonEnvoyer.setText("Envoyer Mail");
+        jButtonEnvoyer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSupprimer2ActionPerformed(evt);
+                jButtonEnvoyerActionPerformed(evt);
             }
         });
 
@@ -217,7 +215,7 @@ public class ClientGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonSupprimer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSupprimer2)
+                .addComponent(jButtonEnvoyer)
                 .addGap(139, 139, 139)
                 .addComponent(jButton3)
                 .addContainerGap())
@@ -229,7 +227,7 @@ public class ClientGUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAjouter)
                     .addComponent(jButtonSupprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSupprimer2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEnvoyer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
@@ -258,7 +256,7 @@ public class ClientGUI extends javax.swing.JFrame {
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,15 +323,15 @@ public class ClientGUI extends javax.swing.JFrame {
         // JOptionPane.showMessageDialog(this, "Ajout effectué avec succès!");
     }//GEN-LAST:event_jButtonAjouterActionPerformed
 
-    private void jButtonSupprimer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimer2ActionPerformed
+    private void jButtonEnvoyerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnvoyerActionPerformed
 
         String mail;
        mail = (String) jTable1.getValueAt(jTable1.getSelectedRow(),5);
         MailJframe mo = new MailJframe(mail);
         
        mo.setVisible(true);
-       //System.out.println(mail);
-    }//GEN-LAST:event_jButtonSupprimer2ActionPerformed
+      
+    }//GEN-LAST:event_jButtonEnvoyerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,8 +370,8 @@ public class ClientGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAjouter;
+    private javax.swing.JButton jButtonEnvoyer;
     private javax.swing.JButton jButtonSupprimer;
-    private javax.swing.JButton jButtonSupprimer2;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -394,7 +392,7 @@ public class ClientGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTxtNom;
     private javax.swing.JTextField jTxtPrenom;
     private javax.swing.JTextField jTxtPseudo;
-    private javax.swing.JTextField jTxtPwd;
+    private javax.swing.JPasswordField jTxtPwd;
     private javax.swing.JTextField jTxtTelephonne;
     // End of variables declaration//GEN-END:variables
 }
