@@ -1,0 +1,157 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package esprit.entite;
+
+/**
+ *
+ * @author p
+ */
+public class Produit {
+  private int id;  
+  private String Nom;
+  private String Type;
+  private String Pharmacie;
+  private String Codeproduit ;
+  private String Periode_de_validite;
+  private int Prix;
+  private int Remise;
+  private int Prix_actuelle;
+
+    public Produit() {
+    }
+   
+  
+  public Produit(int id,String Nom,String Type,String Pharmacie,String Codeproduit,String Periode_de_validite,int Prix,int Remise,int Prix_actuelle)
+  
+  {   this.id=id;
+      this.Nom=Nom;
+      this. Type=Type;
+      this.Pharmacie=Pharmacie;
+      this.Codeproduit=Codeproduit;
+      this.Periode_de_validite=Periode_de_validite;
+      this.Prix=Prix;
+      this.Remise=Remise;
+      this.Prix_actuelle=Prix_actuelle;
+  }
+ public Produit(String Nom,String Type,String Pharmacie,String Codeproduit,String Periode_de_validite,int Prix,int Remise,int Prix_actuelle)
+  
+  {   
+      this.Nom=Nom;
+      this. Type=Type;
+      this.Pharmacie=Pharmacie;
+      this.Codeproduit=Codeproduit;
+      this.Periode_de_validite=Periode_de_validite;
+      this.Prix=Prix;
+      this.Remise=Remise;
+      this.Prix_actuelle=Prix_actuelle;
+  }
+    public String getNom() {
+        return Nom;
+    }
+
+    public void setNom(String Nom) {
+        this.Nom = Nom;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCodeproduit() {
+        return Codeproduit;
+    }
+
+    public void setCodeproduit(String Codeproduit) {
+        this.Codeproduit = Codeproduit;
+    }
+
+    public void setType(String Type) {
+        this.Type = Type;
+    }
+
+    public String getPharmacie() {
+        return Pharmacie;
+    }
+
+    public void setPharmacie(String Pharmacie) {
+        this.Pharmacie = Pharmacie;
+    }
+
+   
+
+    public String getPeriode_de_validite() {
+        return Periode_de_validite;
+    }
+
+    public void setPeriode_de_validite(String Periode_de_validite) {
+        this.Periode_de_validite = Periode_de_validite;
+    }
+
+    public int getPrix() {
+        return Prix;
+    }
+
+    public void setPrix(int Prix) {
+        this.Prix = Prix;
+    }
+
+    public int getRemise() {
+        return Remise;
+    }
+
+    public void setRemise(int Remise) {
+        this.Remise = Remise;
+    }
+
+    public int getPrix_actuelle() {
+        return Prix_actuelle;
+    }
+
+    public void setPrix_actuelle(int Prix_actuelle) {
+        this.Prix_actuelle = Prix_actuelle;
+    }
+
+  
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Produit other = (Produit) obj;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "produit{" + "Nom=" + Nom + ", Type=" + Type + ", Pharmacie=" + Pharmacie + ", Code=" + Codeproduit+ ", Periode_de_validite=" + Periode_de_validite + ", Prix=" + Prix + ", Remise=" + Remise + ", Prix_actuelle=" + Prix_actuelle + ", pharmacie=" + Pharmacie + '}';
+    }
+
+
+
+   
+   
+      
+      
+  
+    
+    
+}

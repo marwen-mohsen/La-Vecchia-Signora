@@ -1,0 +1,155 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package esprit.entite;
+
+/**
+ *
+ * @author p
+ */
+public class Pharmacie {
+    private int id;
+   private String Nom_Pharmacie;
+   private String Proprietaire;
+  private String Gouvernorat;
+  private String Delegation;
+  private String Adresse;
+  private int Telephonne;
+  private int Fax;
+  private String Mail;
+  private String Pseudo;
+  private String Password;
+  private String CNAM;
+
+   /* public Pharmacie(String Nom_Pharmacie, String Proprietaire, String Gouvernorat, String Delegation, String Adresse, int Telephonne, int Fax, String Mail, String Pseudo, String Password, String CNAM) {
+        this.Nom_Pharmacie = Nom_Pharmacie;
+        this.Proprietaire = Proprietaire;
+        this.Gouvernorat = Gouvernorat;
+        this.Delegation = Delegation;
+        this.Adresse = Adresse;
+        this.Telephonne = Telephonne;
+        this.Fax = Fax;
+        this.Mail = Mail;
+        this.Pseudo = Pseudo;
+        this.Password = Password;
+        this.CNAM = CNAM;
+    }*/
+
+   /* public Pharmacie() {
+    }*/
+
+    public String getNom_Pharmacie() {
+        return Nom_Pharmacie;
+    }
+
+    public void setNom_Pharmacie(String Nom_Pharmacie) {
+        this.Nom_Pharmacie = Nom_Pharmacie;
+    }
+
+    public String getProprietaire() {
+        return Proprietaire;
+    }
+
+    public void setProprietaire(String Proprietaire) {
+        this.Proprietaire = Proprietaire;
+    }
+
+    public String getGouvernorat() {
+        return Gouvernorat;
+    }
+
+    public void setGouvernorat(String Gouvernorat) {
+        this.Gouvernorat = Gouvernorat;
+    }
+
+    public String getDelegation() {
+        return Delegation;
+    }
+
+    public void setDelegation(String Delegation) {
+        this.Delegation = Delegation;
+    }
+
+    public String getAdresse() {
+        return Adresse;
+    }
+
+    public void setAdresse(String Adresse) {
+        this.Adresse = Adresse;
+    }
+
+    public int getTelephonne() {
+        return Telephonne;
+    }
+
+    public void setTelephonne(int Telephonne) {
+        this.Telephonne = Telephonne;
+    }
+
+    public int getFax() {
+        return Fax;
+    }
+
+    public void setFax(int Fax) {
+        this.Fax = Fax;
+    }
+
+    public String getMail() {
+        return Mail;
+    }
+
+    public void setMail(String Mail) {
+        this.Mail = Mail;
+    }
+
+    public String getPseudo() {
+        return Pseudo;
+    }
+
+    public void setPseudo(String Pseudo) {
+        this.Pseudo = Pseudo;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    public String getCNAM() {
+        return CNAM;
+    }
+
+    public void setCNAM(String CNAM) {
+        this.CNAM = CNAM;
+    }
+
+    @Override
+    public String toString() {
+        return "Pharmacie{" + "Nom_Pharmacie=" + Nom_Pharmacie + ", Proprietaire=" + Proprietaire + ", Gouvernorat=" + Gouvernorat + ", Delegation=" + Delegation + ", Adresse=" + Adresse + ", Telephonne=" + Telephonne + ", Fax=" + Fax + ", Mail=" + Mail + ", Pseudo=" + Pseudo + ", Password=" + Password + ", CNAM=" + CNAM + '}';
+    }
+
+    public int getid() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void setid(int aInt) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+}
